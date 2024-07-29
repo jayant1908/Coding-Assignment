@@ -1,0 +1,1496 @@
+1. Check if the Given Number is EVEN or ODD
+
+Program
+
+public class EvenOdd {
+    public static void main(String[] args) {
+        int number = 10;
+        if (number % 2 == 0) {
+            System.out.println(number + " is Even.");
+        } else {
+            System.out.println(number + " is Odd.");
+        }
+    }
+}
+
+Flowchart
+
+plaintext
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[Is number % 2 == 0?]
+   /        \
+  /          \
+Yes          No
+ /            \
+v              v
+[Even]       [Odd]
+ /            \
+v              v
+[End]       [End]
+
+Explanation
+
+The program checks if a number is even or odd using the modulus operator %.
+If the number is divisible by 2 with no remainder, it is even; otherwise, it is odd.
+
+Output
+
+10 is Even.
+
+Time and Space Complexity
+Time Complexity: O(1) - The check is constant time.
+Space Complexity: O(1) - No extra space is used.
+
+2. Write a Java Program to find the Factorial of a Given Number
+
+Program
+
+public class Factorial {
+    public static void main(String[] args) {
+        int number = 5;
+        int factorial = 1;
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        System.out.println("Factorial of " + number + " is " + factorial);
+    }
+}
+
+Flowchart
+
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[Initialize factorial to 1]
+       |
+       v
+[For i from 1 to number]
+       |
+       v
+[factorial = factorial * i]
+       |
+       v
+[Print factorial]
+       |
+       v
+[End]
+
+Explanation
+
+The program uses a loop to multiply numbers from 1 to the given number.
+The result is stored in the variable factorial.
+
+Output
+
+Factorial of 5 is 120
+
+Time and Space Complexity
+
+Time Complexity: O(n) - The loop runs n times.
+Space Complexity: O(1) - Only a few extra variables are used.
+
+3. Find the Factorial of a Number using Recursion
+
+Program
+
+public class FactorialRecursion {
+    public static void main(String[] args) {
+        int number = 5;
+        int result = factorial(number);
+        System.out.println("Factorial of " + number + " is " + result);
+    }
+
+    public static int factorial(int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+}
+
+Flowchart
+
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[Call factorial function]
+       |
+       v
+[Is number == 0?]
+   /        \
+  /          \
+Yes          No
+ /            \
+v              v
+[Return 1] [Return n * factorial(n-1)]
+       |
+       v
+[Print result]
+       |
+       v
+[End]
+
+Explanation
+
+The program uses a recursive function to calculate the factorial.
+Base case: if the number is 0, return 1.
+Recursive case: return n * factorial(n - 1).
+
+Output
+
+Factorial of 5 is 120
+
+Time and Space Complexity
+
+Time Complexity: O(n) - Each call makes one recursive call until n reaches 0.
+Space Complexity: O(n) - Due to the call stack in recursion.
+
+4. Swap Two Numbers without Using a Third Variable - Approach 1
+
+Program
+
+public class SwapNumbers1 {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 3;
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        System.out.println("After swapping: a = " + a + ", b = " + b);
+    }
+}
+
+Flowchart
+
+
+    [Start]
+       |
+       v
+[Read a, b]
+       |
+       v
+[a = a + b]
+       |
+       v
+[b = a - b]
+       |
+       v
+[a = a - b]
+       |
+       v
+[Print a, b]
+       |
+       v
+[End]
+
+Explanation
+
+The program swaps two numbers using addition and subtraction.
+a becomes the sum of a and b.
+b is then derived by subtracting b from the sum, leaving the original a.
+Finally, a is derived by subtracting the new b from the sum.
+
+Output
+
+After swapping: a = 3, b = 5
+
+Time and Space Complexity
+
+Time Complexity: O(1) - Constant time operations.
+Space Complexity: O(1) - No extra space is used.
+
+5. Swap Two Numbers without Using a Third Variable - Approach 2
+
+Program
+
+public class SwapNumbers2 {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 3;
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+        System.out.println("After swapping: a = " + a + ", b = " + b);
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read a, b]
+       |
+       v
+[a = a ^ b]
+       |
+       v
+[b = a ^ b]
+       |
+       v
+[a = a ^ b]
+       |
+       v
+[Print a, b]
+       |
+       v
+[End]
+
+Explanation
+
+The program swaps two numbers using the XOR bitwise operator.
+a becomes a XOR b.
+b becomes a XOR b, effectively making it the original a.
+a becomes a XOR b, effectively making it the original b.
+
+Output
+
+After swapping: a = 3, b = 5
+
+Time and Space Complexity
+
+Time Complexity: O(1) - Constant time operations.
+Space Complexity: O(1) - No extra space is used.
+
+6. Swap Two Numbers without Using a Third Variable - Approach 3
+
+Program
+
+public class SwapNumbers3 {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 3;
+        a = a * b;
+        b = a / b;
+        a = a / b;
+        System.out.println("After swapping: a = " + a + ", b = " + b);
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read a, b]
+       |
+       v
+[a = a * b]
+       |
+       v
+[b = a / b]
+       |
+       v
+[a = a / b]
+       |
+       v
+[Print a, b]
+       |
+       v
+[End]
+
+Explanation
+
+The program swaps two numbers using multiplication and division.
+a becomes the product of a and b.
+b is derived by dividing the product by the original b.
+Finally, a is derived by dividing the product by the new b.
+
+Output
+
+After swapping: a = 3, b = 5
+
+Time and Space Complexity
+
+Time Complexity: O(1) - Constant time operations.
+Space Complexity: O(1) - No extra space is used.
+
+7. How to Check if the Given Number is Positive or Negative in Java?
+
+Program
+
+public class PositiveNegative {
+    public static void main(String[] args) {
+        int number = -10;
+        if (number > 0) {
+            System.out.println(number + " is Positive.");
+        } else if (number < 0) {
+            System.out.println(number + " is Negative.");
+        } else {
+            System.out.println(number + " is Zero.");
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[Is number > 0?]
+   /        \
+  /          \
+Yes          No
+ /            \
+v              v
+[Positive] [Is number < 0?]
+                 /        \
+                /          \
+              Yes          No
+              /              \
+            v                 v
+        [Negative]        [Zero]
+                 \           /
+                  v         v
+                 [End]
+
+Explanation
+
+The program checks if a number is positive, negative, or zero using if-else statements.
+
+-10 is Negative.
+
+Time and Space Complexity
+
+Time Complexity: O(1) - Constant time operations.
+Space Complexity: O(1) - No extra space is used.
+
+8. Write a Java Program to Find Whether a Given Number is a Leap Year or NOT
+
+Program
+
+public class LeapYear {
+    public static void main(String[] args) {
+        int year = 2024;
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " is a Leap Year.");
+        } else {
+            System.out.println(year + " is not a Leap Year.");
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read year]
+       |
+       v
+[Is (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)?]
+   /        \
+  /          \
+Yes          No
+ /            \
+v              v
+[Leap Year] [Not Leap Year]
+ /            \
+v              v
+[End]       [End]
+
+Explanation
+
+The program checks if a year is a leap year using the given conditions:
+A year is a leap year if it is divisible by 4 and not by 100, or it is divisible by 400.
+
+2024 is a Leap Year.
+
+
+Time and Space Complexity
+
+Time Complexity: O(1) - Constant time operations.
+Space Complexity: O(1) - No extra space is used.
+
+10. Write a Java Program to Print the Digits of a Given Number
+
+Program
+
+public class PrintDigits {
+    public static void main(String[] args) {
+        int number = 12345;
+        while (number > 0) {
+            int digit = number % 10;
+            System.out.print(digit + " ");
+            number /= 10;
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[While number > 0]
+       |
+       v
+[digit = number % 10]
+       |
+       v
+[Print digit]
+       |
+       v
+[number = number / 10]
+       |
+       v
+[End]
+
+Explanation
+
+The program extracts and prints digits from the given number starting from the least significant digit.
+
+Output
+
+5 4 3 2 1 
+
+Time and Space Complexity
+
+Time Complexity: O(n) - Proportional to the number of digits.
+Space Complexity: O(1) - No extra space is used.
+
+11. Write a Java Program to Print All the Factors of a Given Number
+
+Program
+
+public class Factors {
+    public static void main(String[] args) {
+        int number = 28;
+        System.out.print("Factors of " + number + " are: ");
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[For i from 1 to number]
+       |
+       v
+[Is number % i == 0?]
+   /        \
+  /          \
+Yes          No
+ /            \
+v              v
+[Print i]   [Continue]
+       |
+       v
+[End]
+
+Explanation
+
+The program finds and prints all factors of the given number.
+
+Output
+
+Factors of 28 are: 1 2 4 7 14 28 
+
+Time and Space Complexity
+
+Time Complexity: O(n) - The loop runs n times.
+Space Complexity: O(1) - No extra space is used.
+
+12. Write a Java Program to Find the Sum of the Digits of a Given Number
+
+Program
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        int number = 12345;
+        int sum = 0;
+        while (number > 0) {
+            sum += number % 10;
+            number /= 10;
+        }
+        System.out.println("Sum of digits: " + sum);
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[Initialize sum to 0]
+       |
+       v
+[While number > 0]
+       |
+       v
+[sum = sum + (number % 10)]
+       |
+       v
+[number = number / 10]
+       |
+       v
+[Print sum]
+       |
+       v
+[End]
+
+Explanation
+
+The program calculates the sum of the digits of the given number.
+
+Output
+
+Sum of digits: 15
+
+Time and Space Complexity
+
+Time Complexity: O(n) - Proportional to the number of digits.
+Space Complexity: O(1) - No extra space is used.
+
+13. Write a Java Program to Find the Smallest of 3 Numbers (a, b, c) Without Using < or > Symbol
+
+Program
+
+public class SmallestOfThree {
+    public static void main(String[] args) {
+        int a = 5, b = 3, c = 8;
+        int smallest = (a + b - Math.abs(a - b)) / 2;
+        smallest = (smallest + c - Math.abs(smallest - c)) / 2;
+        System.out.println("Smallest number is: " + smallest);
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read a, b, c]
+       |
+       v
+[smallest = (a + b - |a - b|) / 2]
+       |
+       v
+[smallest = (smallest + c - |smallest - c|) / 2]
+       |
+       v
+[Print smallest]
+       |
+       v
+[End]
+
+Explanation
+
+The program uses the formula (x + y - Math.abs(x - y)) / 2 to find the minimum of two numbers.
+This formula is applied twice to find the smallest of three numbers.
+
+Output
+
+Smallest number is: 3
+
+Time and Space Complexity
+
+Time Complexity: O(1) - Constant time operations.
+Space Complexity: O(1) - No extra space is used.
+
+14. How to Add Two Numbers Without Using the Arithmetic Operators in Java?
+
+Program
+
+public class AddWithoutArithmetic {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 3;
+        while (b != 0) {
+            int carry = a & b;
+            a = a ^ b;
+            b = carry << 1;
+        }
+        System.out.println("Sum is: " + a);
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read a, b]
+       |
+       v
+[While b != 0]
+       |
+       v
+[carry = a & b]
+       |
+       v
+[a = a ^ b]
+       |
+       v
+[b = carry << 1]
+       |
+       v
+[Print a]
+       |
+       v
+[End]
+
+Explanation
+
+The program adds two numbers using bitwise operators.
+It uses the concept of adding bits with carry.
+
+Output
+
+Sum is: 8
+
+Time and Space Complexity
+
+Time Complexity: O(log n) - Where n is the larger of the two numbers.
+Space Complexity: O(1) - No extra space is used.
+
+15. Write a Java Program to Reverse a Given Number
+
+Program
+
+public class ReverseNumber {
+    public static void main(String[] args) {
+        int number = 12345;
+        int reversed = 0;
+        while (number != 0) {
+            int digit = number % 10;
+            reversed = reversed * 10 + digit;
+            number /= 10;
+        }
+        System.out.println("Reversed number: " + reversed);
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[Initialize reversed to 0]
+       |
+       v
+[While number != 0]
+       |
+       v
+[digit = number % 10]
+       |
+       v
+[reversed = reversed * 10 + digit]
+       |
+       v
+[number = number / 10]
+       |
+       v
+[Print reversed]
+       |
+       v
+[End]
+
+Explanation
+
+The program reverses the digits of a given number.
+
+Output
+
+Reversed number: 54321
+
+Time and Space Complexity
+
+Time Complexity: O(n) - Proportional to the number of digits.
+Space Complexity: O(1) - No extra space is used.
+
+16. Write a Java Program to Find GCD of Two Given Numbers
+
+Program
+
+public class GCD {
+    public static void main(String[] args) {
+        int a = 56, b = 98;
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        System.out.println("GCD is: " + a);
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read a, b]
+       |
+       v
+[While b != 0]
+       |
+       v
+[temp = b]
+       |
+       v
+[b = a % b]
+       |
+       v
+[a = temp]
+       |
+       v
+[Print a]
+       |
+       v
+[End]
+
+Explanation
+
+The program uses the Euclidean algorithm to find the GCD of two numbers.
+
+Output
+
+GCD is: 14
+
+Time and Space Complexity
+
+Time Complexity: O(log(min(a, b))) - Based on the Euclidean algorithm.
+Space Complexity: O(1) - No extra space is used.
+
+17. Write a Java Program to Find LCM of Two Given Numbers
+
+Program
+
+public class LCM {
+    public static void main(String[] args) {
+        int a = 15, b = 20;
+        int gcd = findGCD(a, b);
+        int lcm = (a * b) / gcd;
+        System.out.println("LCM is: " + lcm);
+    }
+
+    public static int findGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read a, b]
+       |
+       v
+[Call findGCD function]
+       |
+       v
+[gcd = findGCD(a, b)]
+       |
+       v
+[lcm = (a * b) / gcd]
+       |
+       v
+[Print lcm]
+       |
+       v
+[End]
+
+Explanation
+
+The program calculates the LCM of two numbers using their GCD.
+
+Output
+
+LCM is: 60
+
+Time and Space Complexity
+
+Time Complexity: O(log(min(a, b))) - Due to the GCD calculation.
+Space Complexity: O(1) - No extra space is used.
+
+18. Write a Java Program to Find LCM of Two Given Numbers using Prime Factors Method
+
+Program
+
+import java.util.*;
+
+public class LCMPrimeFactors {
+    public static void main(String[] args) {
+        int a = 15, b = 20;
+        List<Integer> primeFactorsA = getPrimeFactors(a);
+        List<Integer> primeFactorsB = getPrimeFactors(b);
+        List<Integer> lcmFactors = new ArrayList<>(primeFactorsA);
+        for (int factor : primeFactorsB) {
+            if (!lcmFactors.remove((Integer) factor)) {
+                lcmFactors.add(factor);
+            }
+        }
+        int lcm = 1;
+        for (int factor : lcmFactors) {
+            lcm *= factor;
+        }
+        System.out.println("LCM is: " + lcm);
+    }
+
+    public static List<Integer> getPrimeFactors(int number) {
+        List<Integer> factors = new ArrayList<>();
+        for (int i = 2; i <= number; i++) {
+            while (number % i == 0) {
+                factors.add(i);
+                number /= i;
+            }
+        }
+        return factors;
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read a, b]
+       |
+       v
+[Call getPrimeFactors function for a and b]
+       |
+       v
+[Initialize lcmFactors with primeFactorsA]
+       |
+       v
+[For each factor in primeFactorsB]
+       |
+       v
+[If factor is in lcmFactors, remove it]
+       |
+       v
+[Else, add factor to lcmFactors]
+       |
+       v
+[Initialize lcm to 1]
+       |
+       v
+[For each factor in lcmFactors]
+       |
+       v
+[lcm = lcm * factor]
+       |
+       v
+[Print lcm]
+       |
+       v
+[End]
+
+Explanation
+
+The program finds the LCM of two numbers using their prime factors.
+
+Output
+
+LCM is: 60
+
+Time and Space Complexity
+
+Time Complexity: O(n log n) - Due to prime factorization.
+Space Complexity: O(n) - For storing prime factors.
+
+19. Check Whether the Given Number is a Palindrome or NOT
+
+Program
+
+public class Palindrome {
+    public static void main(String[] args) {
+        int number = 12321;
+        int originalNumber = number;
+        int reversed = 0;
+        while (number != 0) {
+            int digit = number % 10;
+            reversed = reversed * 10 + digit;
+            number /= 10;
+        }
+        if (originalNumber == reversed) {
+            System.out.println(originalNumber + " is a Palindrome.");
+        } else {
+            System.out.println(originalNumber + " is not a Palindrome.");
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[Initialize reversed to 0]
+       |
+       v
+[While number != 0]
+       |
+       v
+[digit = number % 10]
+       |
+       v
+[reversed = reversed * 10 + digit]
+       |
+       v
+[number = number / 10]
+       |
+       v
+[Is originalNumber == reversed?]
+   /        \
+  /          \
+Yes          No
+ /            \
+v              v
+[Palindrome] [Not Palindrome]
+       |
+       v
+[End]
+
+Explanation
+
+The program checks if a given number is a palindrome by reversing it and comparing it with the original number.
+
+Output
+
+12321 is a Palindrome.
+
+Time and Space Complexity
+
+Time Complexity: O(n) - Proportional to the number of digits.
+Space Complexity: O(1) - No extra space is used.
+
+20. Write a Java Program to Print All the Prime Factors of the Given Number
+
+Program
+
+public class PrimeFactors {
+    public static void main(String[] args) {
+        int number = 28;
+        System.out.print("Prime factors of " + number + " are: ");
+        for (int i = 2; i <= number; i++) {
+            while (number % i == 0) {
+                System.out.print(i + " ");
+                number /= i;
+            }
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[For i from 2 to number]
+       |
+       v
+[While number % i == 0]
+       |
+       v
+[Print i]
+       |
+       v
+[number = number / i]
+       |
+       v
+[End]
+
+Explanation
+
+The program finds and prints all prime factors of the given number.
+
+Output
+
+Prime factors of 28 are: 2 2 7 
+
+Time and Space Complexity
+
+Time Complexity: O(n log n) - Due to prime factorization.
+Space Complexity: O(1) - No extra space is used.
+
+21. Write a Java Program to Check Whether the Given Number is a Prime Number or NOT
+
+Program
+
+public class PrimeCheck {
+    public static void main(String[] args) {
+        int number = 29;
+        boolean isPrime = true;
+        if (number <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+        if (isPrime) {
+            System.out.println(number + " is a Prime Number.");
+        } else {
+            System.out.println(number + " is not a Prime Number.");
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[Initialize isPrime to true]
+       |
+       v
+[If number <= 1]
+       |
+       v
+[Set isPrime to false]
+       |
+       v
+[Else]
+       |
+       v
+[For i from 2 to sqrt(number)]
+       |
+       v
+[If number % i == 0]
+       |
+       v
+[Set isPrime to false]
+       |
+       v
+[Break]
+       |
+       v
+[Print isPrime]
+       |
+       v
+[End]
+
+Explanation
+
+The program checks if a number is prime by testing divisors up to its square root.
+
+Output
+
+29 is a Prime Number.
+
+Time and Space Complexity
+
+Time Complexity: O(sqrt(n)) - Due to the loop up to the square root of the number.
+Space Complexity: O(1) - No extra space is used.
+
+22. Write a Java Program to Print Prime Numbers from 1 to N
+
+Program
+
+public class PrimeNumbers {
+    public static void main(String[] args) {
+        int N = 50;
+        System.out.print("Prime numbers from 1 to " + N + " are: ");
+        for (int i = 2; i <= N; i++) {
+            boolean isPrime = true;
+            for (int j = 2; j <= Math.sqrt(i); j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read N]
+       |
+       v
+[For i from 2 to N]
+       |
+       v
+[Initialize isPrime to true]
+       |
+       v
+[For j from 2 to sqrt(i)]
+       |
+       v
+[If i % j == 0]
+       |
+       v
+[Set isPrime to false]
+       |
+       v
+[Break]
+       |
+       v
+[If isPrime]
+       |
+       v
+[Print i]
+       |
+       v
+[End]
+
+Explanation
+
+The program prints all prime numbers from 1 to a given number N.
+
+Output
+
+Prime numbers from 1 to 50 are: 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 
+
+Time and Space Complexity
+
+Time Complexity: O(n sqrt(n)) - Due to the nested loops.
+Space Complexity: O(1) - No extra space is used.
+
+23. Write a Java Program to Check Whether the Given Number is an Armstrong Number or Not
+
+Program
+
+public class ArmstrongNumber {
+    public static void main(String[] args) {
+        int number = 153;
+        int originalNumber = number;
+        int sum = 0;
+        int n = String.valueOf(number).length(); // Number of digits
+        
+        while (number != 0) {
+            int digit = number % 10;
+            sum += Math.pow(digit, n);
+            number /= 10;
+        }
+        
+        if (originalNumber == sum) {
+            System.out.println(originalNumber + " is an Armstrong number.");
+        } else {
+            System.out.println(originalNumber + " is not an Armstrong number.");
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[Get number of digits (n)]
+       |
+       v
+[Initialize sum to 0]
+       |
+       v
+[While number != 0]
+       |
+       v
+[digit = number % 10]
+       |
+       v
+[sum += digit^n]
+       |
+       v
+[number /= 10]
+       |
+       v
+[Is originalNumber == sum?]
+   /        \
+  /          \
+Yes          No
+ /            \
+v              v
+[Armstrong] [Not Armstrong]
+       |
+       v
+[End]
+
+Explanation
+
+The program checks if a number is an Armstrong number by comparing it to the sum of its own digits each raised to the power of the number of digits.
+
+Output
+
+153 is an Armstrong number.
+
+Time and Space Complexity
+
+Time Complexity: O(d) - Where d is the number of digits (since each digit is processed once).
+Space Complexity: O(1) - No extra space is used.
+
+24. Write a Java Program to Print Armstrong Numbers between 1 to 1000
+
+Program
+
+public class ArmstrongNumbers {
+    public static void main(String[] args) {
+        System.out.print("Armstrong numbers between 1 and 1000 are: ");
+        for (int number = 1; number <= 1000; number++) {
+            int originalNumber = number;
+            int sum = 0;
+            int n = String.valueOf(number).length(); // Number of digits
+            
+            while (number != 0) {
+                int digit = number % 10;
+                sum += Math.pow(digit, n);
+                number /= 10;
+            }
+            
+            if (originalNumber == sum) {
+                System.out.print(originalNumber + " ");
+            }
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[For number from 1 to 1000]
+       |
+       v
+[Get number of digits (n)]
+       |
+       v
+[Initialize sum to 0]
+       |
+       v
+[While number != 0]
+       |
+       v
+[digit = number % 10]
+       |
+       v
+[sum += digit^n]
+       |
+       v
+[number /= 10]
+       |
+       v
+[Is originalNumber == sum?]
+   /        \
+  /          \
+Yes          No
+ /            \
+v              v
+[Print number] [Continue]
+       |
+       v
+[End]
+
+Explanation
+
+The program iterates through numbers from 1 to 1000, checking each to see if it is an Armstrong number and printing those that are.
+
+Output
+
+Armstrong numbers between 1 and 1000 are: 1 2 3 4 5 6 7 8 9 153 370 371 407 
+
+Time and Space Complexity
+
+Time Complexity: O(n * d) - Where n is 1000 and d is the number of digits, considering each number from 1 to 1000.
+Space Complexity: O(1) - No extra space is used.
+
+25. Write a Java Program to Check Whether the Given Number is a Perfect Number or Not
+
+Program
+
+public class PerfectNumber {
+    public static void main(String[] args) {
+        int number = 28;
+        int sum = 0;
+
+        for (int i = 1; i <= number / 2; i++) {
+            if (number % i == 0) {
+                sum += i;
+            }
+        }
+
+        if (sum == number) {
+            System.out.println(number + " is a Perfect number.");
+        } else {
+            System.out.println(number + " is not a Perfect number.");
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[Read number]
+       |
+       v
+[Initialize sum to 0]
+       |
+       v
+[For i from 1 to number/2]
+       |
+       v
+[If number % i == 0]
+       |
+       v
+[Add i to sum]
+       |
+       v
+[Is sum == number?]
+   /        \
+  /          \
+Yes          No
+ /            \
+v              v
+[Perfect]     [Not Perfect]
+       |
+       v
+[End]
+
+Explanation
+
+The program checks if a number is a perfect number by summing its proper divisors and comparing the sum to the original number.
+Output
+
+28 is a Perfect number.
+
+Time and Space Complexity
+
+Time Complexity: O(n) - For finding divisors up to half of the number.
+Space Complexity: O(1) - No extra space is used.
+
+26. Write a Java Program to Print Perfect Numbers between 1 to 1000
+
+Program
+
+public class PerfectNumbers {
+    public static void main(String[] args) {
+        System.out.print("Perfect numbers between 1 and 1000 are: ");
+        for (int number = 1; number <= 1000; number++) {
+            int sum = 0;
+
+            for (int i = 1; i <= number / 2; i++) {
+                if (number % i == 0) {
+                    sum += i;
+                }
+            }
+
+            if (sum == number) {
+                System.out.print(number + " ");
+            }
+        }
+    }
+}
+
+Flowchart
+
+    [Start]
+       |
+       v
+[For number from 1 to 1000]
+       |
+       v
+[Initialize sum to 0]
+       |
+       v
+[For i from 1 to number/2]
+       |
+       v
+[If number % i == 0]
+       |
+       v
+[Add i to sum]
+       |
+       v
+[Is sum == number?]
+   /        \
+  /          \
+Yes          No
+ /            \
+v              v
+[Print number] [Continue]
+       |
+       v
+[End]
+
+Explanation
+
+The program iterates through numbers from 1 to 1000, checking each to see if it is a perfect number and printing those that are.
+
+Output
+
+Perfect numbers between 1 and 1000 are: 6 28 496 
+
+Time and Space Complexity
+
+Time Complexity: O(n^2) - Due to nested loops for checking each number and its divisors.
+Space Complexity: O(1) - No extra space is used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
